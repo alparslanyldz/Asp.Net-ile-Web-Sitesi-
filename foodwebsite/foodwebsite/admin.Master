@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="foodwebsite.admin" %>
+
+<!DOCTYPE html>
+
+<html lang="tr">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Uygulaması</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+            height: auto;
+            width: 453px;
+        }
+        .auto-style2 {
+            text-align: center;
+            height: auto;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <div style="margin-left:50px"><a class="navbar-brand" runat="server" href="~/" ><image src ="image/logo.png" width="160" height="80"  > </image></a> </div>
+                </div>
+                <div class="navbar-collapse collapse" style="margin-top:100px; margin-left:450px";>
+                    <ul class="nav navbar-nav" >
+                        
+                     </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container body-content" style="margin-top:auto">
+            <div style="margin-top:60px; margin-bottom:200px;">
+                       <div style="height:150px; width:700px; margin-left:150px; ">
+                           <image src ="image/banner.jpg" width="900" height="150" >
+                           </image>
+                       </div>
+                       <div style="margin-left:150px">
+                           <div style="margin-top:20px; margin-left:150px; background-color:khaki;" class="auto-style2">
+                               <em><strong><span style="font-size: x-large; color: #571B8A; text-decoration: underline">MENÜLER</span><div class="text-left" style="margin-left:10px">
+                                <a href="kategoriler.aspx"> <asp:Label ID="Label6" runat="server" ForeColor="#3399FF" style="text-decoration: underline; font-size: large" Text="Kategoriler"></asp:Label></a>  
+                                   <br /><em><strong>
+                                <a href="yemekler.aspx"><asp:Label ID="Label7" runat="server" ForeColor="#3399FF" style="text-decoration: underline; font-size: large" Text="Yemekler"></asp:Label></a>   
+                                   <br />
+                                  <a href="yorumlar.aspx"><asp:Label ID="Label8" runat="server" ForeColor="#3399FF" style="text-decoration: underline; font-size: large" Text="Yorumlar"></asp:Label></a> 
+                                   <br />
+                                  <a href="mesajlar.aspx"><asp:Label ID="Label9" runat="server" ForeColor="#3399FF" style="text-decoration: underline; font-size: large" Text="Mesajlar"></asp:Label></a> 
+                                   <br />
+                                   <a href="gununyemegiadmin.aspx"><asp:Label ID="Label10" runat="server" ForeColor="#3399FF" style="text-decoration: underline; font-size: large" Text="Günün Yemeği"></asp:Label></a> 
+                                   <br />
+                                   <a href="tarifler.aspx"><asp:Label ID="Label11" runat="server" ForeColor="#3399FF" style="text-decoration: underline; font-size: large" Text="Tarifler"></asp:Label></a> 
+                                   </strong></em>
+                               </div>
+                               </strong></em>
+                           </div>
+                           <div style="margin-left:400px; margin-top:-190px; background-color:khaki;" class="auto-style1">
+                               <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                               </asp:ContentPlaceHolder>
+                           </div>
+                       </div>
+                   </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                   
+            </asp:ContentPlaceHolder>
+      
+            <footer >
+          
+            <hr />
+                <p style:= class="text-center"> <%: DateTime.Now.Year %> - Yemek Tarifi Sitesi
+                </p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
